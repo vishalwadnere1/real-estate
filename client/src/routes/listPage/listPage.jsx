@@ -27,7 +27,7 @@ function ListPage() {
           </Suspense>
         </div>
       </div>
-      <div className="mapContainer">
+      {/* <div className="mapContainer">
         <Suspense fallback={<p>Loading...</p>}>
           <Await
             resolve={data.postResponse}
@@ -36,7 +36,7 @@ function ListPage() {
             {(postResponse) => <Map items={postResponse.data} />}
           </Await>
         </Suspense>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Register from "./routes/register/register";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
+import Chat from "./components/chat/Chat";
 
 function App() {
   const router = createBrowserRouter([
@@ -63,6 +64,10 @@ function App() {
           path: "/add",
           element: <NewPostPage />,
         },
+        {
+          path: "/chat",
+          element: <Chat />
+        }
       ],
     },
   ]);
