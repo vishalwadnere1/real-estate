@@ -69,7 +69,9 @@ function Chat({ chats }) {
       });
     }
     return () => {
-      socket.off("getMessage");
+      if (socket) {
+        socket.off("getMessage");
+      }
     };
   }, [socket, chat]);
 
