@@ -19,12 +19,12 @@ function Navbar() {
       <div className="left">
         <Link to="/" className="logo">
           <img src="/logo.png" alt="" />
-          <span>LamaEstate</span>
+          <span>V_Estate</span>
         </Link>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/">Contact</Link>
-        <Link to="/">Agents</Link>
+        {/* <Link to="/search">Search Property</Link> */}
+        {/* <Link to="/">Agents</Link> */}
       </div>
       <div className="right">
         {currentUser ? (

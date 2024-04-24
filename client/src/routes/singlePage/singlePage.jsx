@@ -6,10 +6,8 @@ import DOMPurify from "dompurify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
-import { SocketContext } from "../../context/SocketContext";
 
 function SinglePage() {
-  const { socket } = useContext(SocketContext);
   const post = useLoaderData();
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
@@ -28,16 +26,6 @@ function SinglePage() {
       setSaved((prev) => !prev);
     }
   };
-
-  const handleSendMessage = () => {
-    // Assuming you have the logic to get the receiver's ID and the message text
-    const receiverId = "r6617d43e6a866be2af552ebe"; // Replace with actual receiver ID
-    const messageText = "Hello, this is a message"; // Replace with actual message text
-
-    // Emit a 'sendMessage' event to the server with the receiver's ID and message text
-    socket.emit("sendMessage", { receiverId, text: messageText });
-  };
-
   return (
     <div className="singlePage">
       <div className="details">
@@ -150,7 +138,7 @@ function SinglePage() {
             <Map items={[post]} />
           </div> */}
           <div className="buttons">
-            <button onClick={handleSendMessage}>
+            <button>
               <img src="/chat.png" alt="" />
               Send a Message
             </button>
